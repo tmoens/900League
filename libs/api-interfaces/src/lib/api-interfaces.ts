@@ -18,7 +18,7 @@ export interface IFixture {
   id: string;
   date: Date;
   location: string;
-  state: FixtureState;
+  state: string;
 }
 
 export interface IPlayer {

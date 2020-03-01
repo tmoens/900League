@@ -2,7 +2,6 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { TeamsRepository } from './teams.repository';
 import { Team } from './team.entity';
-import { TeamDTO, TeamPlayerDTO } from '@dg-league/api-interfaces';
 
 @Injectable()
 export class TeamsService {

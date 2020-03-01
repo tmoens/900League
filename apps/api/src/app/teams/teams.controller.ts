@@ -1,6 +1,6 @@
 import { Controller, Get } from '@nestjs/common';
 import { TeamsService } from './teams.service';
-import { TeamDTO } from '@dg-league/api-interfaces';
+import { Team } from './team.entity';
 
 @Controller('teams')
 export class TeamsController {
@@ -9,7 +9,7 @@ export class TeamsController {
   ) {}
 
   @Get()
-  async getTeams(): Promise<TeamDTO[]> {
+  async getTeams(): Promise<Team[]> {
     return this.teamsService.getTeams();
   }
 
