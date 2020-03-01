@@ -4,6 +4,7 @@ import { TopBarComponent } from './top-bar.component';
 import { RouterModule } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { GuiTools } from '../app-state.service';
 
 
 
@@ -19,4 +20,4 @@ import { MatButtonModule } from '@angular/material/button';
     MatButtonModule
   ]
 })
-export class TopBarModule { }
+export class TopBarModule {}

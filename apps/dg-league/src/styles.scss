@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+@include mat-core();
+@import "dg-theme.scss";
+
+@include angular-material-theme($dg-league-theme);
+
+.fill-remaining-space {
+  // This fills the remaining space, by using flexbox.
+  // Every toolbar row uses a flexbox row layout.
+  flex: 1 1 auto;
+}
+.zf-container {
+  padding: 16px;
+  margin-bottom: 16px;
+  margin-top: 5px;
+  @include mat-elevation(3);
+}
+
+.zf-selection-list {
+  overflow: auto;
+}
+
+.zf-selection-item {
+  &:hover, &:active, &:focus {
+    background-color: mat-color(map-get($dg-league-theme, background), hover);
+  }
+
+  &.selected {
+    background-color: mat-color(map-get($dg-league-theme, primary), lighter, 0.5);
+  }
+}

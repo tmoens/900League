@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Edit Fixture</h1>
+<div mat-dialog-content>
+  <div>Home: {{homeString}}</div>
+  <div>Away: {{awayString}}</div>
+  <mat-form-field>
+    <mat-label>Date:</mat-label>
+    <input matInput [(ngModel)]="fixture.date">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Date:</mat-label>
+    <input matInput [(ngModel)]="fixture.date">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button (click)="onRevert()">Revert</button>
+  <button mat-button (click)="onSave()" cdkFocusInitial>Save</button>
+</div>

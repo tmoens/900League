@@ -1,0 +1,11 @@
+{
+  "type": "mysql",
+  "host": "localhost",
+  "port": 3306,
+  "username": "900_league",
+  "password": "900_league",
+  "database": "900_league",
+  "entities": ["Player", "Team", "Fixture", "Player2Team", "Team2Fixture"],
+  "synchronize": true,
+  "logging": ["error", "query"]
+}

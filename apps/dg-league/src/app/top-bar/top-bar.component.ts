@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppStateService, GuiTools } from '../app-state.service';
 
 @Component({
   selector: 'dg-league-top-bar',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./top-bar.component.css']
 })
 export class TopBarComponent implements OnInit {
+  guiTools = GuiTools;
 
-  constructor() { }
+  constructor(
+    public appStateService: AppStateService,
+  ) { }
 
   ngOnInit(): void {
   }

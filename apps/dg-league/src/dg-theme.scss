@@ -1,0 +1,7 @@
+
+$zf-primary: mat-palette($mat-blue);
+$zf-accent: mat-palette($mat-yellow, A200, A100, A400);
+$zf-warn: mat-palette($mat-red);
+
+$dg-league-theme: mat-light-theme($zf-primary, $zf-accent, $zf-warn);
+

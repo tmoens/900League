@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { TeamService } from '../team/team.service';
+import { StandingsService } from './standings.service';
+import { AppStateService, GuiTools } from '../app-state.service';
 
 @Component({
   selector: 'dg-league-standings',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StandingsComponent implements OnInit {
 
-  constructor() { }
+  displayCols: string[] = ['team', 'numberPlayed', 'pointsFor', 'pointsAgainst', 'rating'];
+
+  constructor(
+    private appStateService: AppStateService,
+    public readonly standingsService: StandingsService,
+    private readonly teamService: TeamService,
+  ) { }
 
   ngOnInit(): void {
+    this.appStateService.setActiveTool(GuiTools.STANDINGS);
   }
 
 }

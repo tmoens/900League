@@ -1,0 +1,37 @@
+<div fxLayout="row" fxLayoutGap="10px" min-width="700px">
+  <div fxFlex="45%" >
+    <table mat-table [dataSource]="teamService.all">
+      <ng-container matColumnDef="team">
+        <td mat-cell *matCellDef="let item"
+            [class.selected]="selectedTeam.id === item.id"
+            class="zf-selection-item">
+          <button mat-button color="primary" (click)="onSelect(item)">{{item.name}}</button>
+        </td>
+      </ng-container>
+      <tr mat-row *matRowDef="let row; columns: teamColumns;"></tr>
+    </table>
+  </div>
+
+  <div fxFlex *ngIf="selectedTeam" class = zf-container>
+    <table mat-table [dataSource]="selectedTeam.roster" width="100%">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let item">{{item.player.firstName}} {{item.player.lastName}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="pdgaNumber">
+        <th mat-header-cell *matHeaderCellDef>PDGA Number</th>
+        <td mat-cell *matCellDef="let item">
+          <span *ngIf="item.player.pdgaNumber">{{item.player.pdgaNumber}}</span></td>
+      </ng-container>
+
+      <ng-container matColumnDef="rating" >
+        <th mat-header-cell *matHeaderCellDef>Rating</th>
+        <td mat-cell *matCellDef="let item">{{item.rating}}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="rosterColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: rosterColumns;"></tr>
+    </table>
+  </div>
+</div>
